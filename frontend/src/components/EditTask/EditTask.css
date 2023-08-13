@@ -1,0 +1,52 @@
+/* EditTask.css */
+.edit-task-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-task-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .edit-task-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .edit-task-form input[type="text"],
+  .edit-task-form input[type="date"],
+  .edit-task-form input[type="time"],
+  .edit-task-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .edit-task-form textarea {
+    resize: vertical;
+  }
+  
+  .edit-submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .edit-submit-button:hover {
+    background-color: #0056b3;
+  }
+  

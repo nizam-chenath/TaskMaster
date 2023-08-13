@@ -1,0 +1,46 @@
+/* TaskDetails.css */
+.task-details-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+  }
+  
+  .task-image {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .task-image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .task-details {
+    flex: 2;
+    padding: 10px;
+  }
+  
+  .task-details h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .task-details .description {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .date-time p {
+    font-size: 14px;
+    color: #888;
+  }
+  

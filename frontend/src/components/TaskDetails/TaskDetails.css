@@ -44,3 +44,9 @@
     color: #888;
   }
   
+  @media(max-width: 768px ){
+    .task-details-container{
+        flex-direction: column;
+    }
+  }
+  

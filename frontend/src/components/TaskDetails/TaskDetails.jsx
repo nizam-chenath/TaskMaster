@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from '../../services/api';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "../../services/api";
 
-import './TaskDetails.css';
+import "./TaskDetails.css";
 
 function TaskDetails() {
   const { id } = useParams();
@@ -12,9 +12,11 @@ function TaskDetails() {
     // Fetch task details based on the ID and populate the state
     const fetchTaskDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/tasks/${id}`);
+        const response = await axios.get(
+          `http://localhost:3001/api/tasks/${id}`
+        );
         setTask(response.data.data[0]);
-        console.log("response", response.data.data)
+        console.log("response", response.data.data);
       } catch (error) {
         console.error(error);
       }

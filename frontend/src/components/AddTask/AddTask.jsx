@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import axios from '../../services/api';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "../../services/api";
+import { useNavigate } from "react-router-dom";
 
-import './AddTask.css';
+import "./AddTask.css";
 
 function AddTask() {
-  const [heading, setHeading] = useState('');
-  const [description, setDescription] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-  const [priority, setPriority] = useState('')
+  const [heading, setHeading] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [priority, setPriority] = useState("");
   const [image, setImage] = useState(null);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -22,22 +22,21 @@ function AddTask() {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('heading', heading);
-    formData.append('description', description);
-    formData.append('priority', priority)
-    formData.append('date', date);
-    formData.append('time', time);
-    formData.append('image', image);
-   
-
-    
+    formData.append("heading", heading);
+    formData.append("description", description);
+    formData.append("priority", priority);
+    formData.append("date", date);
+    formData.append("time", time);
+    formData.append("image", image);
 
     try {
-      const res = await axios.post('http://localhost:3001/api/tasks/add',formData);
-      console.log(res)
-      if(res.status === 201){
-
-          navigate('/')
+      const res = await axios.post(
+        "http://localhost:3001/api/tasks/add",
+        formData
+      );
+      console.log(res);
+      if (res.status === 201) {
+        navigate("/");
       }
       // Redirect or update state to show the new task
     } catch (error) {
@@ -69,20 +68,22 @@ function AddTask() {
           />
         </div>
         <div className="form-group">
-      <label htmlFor="priority">Priority</label>
-      <select
-        id="priority"
-        value={priority}
-        onChange={(e) => setPriority(e.target.value)}
-        required
-      >
-        <option value="" disabled>Select Priority</option>
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-      </select>
-    </div>
-        
+          <label htmlFor="priority">Priority</label>
+          <select
+            id="priority"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+            required
+          >
+            <option value="" disabled>
+              Select Priority
+            </option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+
         <div className="form-group">
           <label htmlFor="date">Date</label>
           <input
@@ -93,7 +94,6 @@ function AddTask() {
             required
           />
         </div>
-      
 
         <div className="form-group">
           <label htmlFor="time">Time</label>
@@ -107,7 +107,12 @@ function AddTask() {
         </div>
         <div className="form-group">
           <label htmlFor="image">Image</label>
-          <input type="file" name="image" accept="image/*" onChange={handleImageChange} />
+          <input
+            type="file"
+            name="image"
+            accept="image/*"
+            onChange={handleImageChange}
+          />
         </div>
         <button type="submit" className="submit-button">
           Add Task
